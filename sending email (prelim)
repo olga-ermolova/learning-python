@@ -1,0 +1,22 @@
+# send emails
+import smtplib as email
+# dir(smtplib)
+
+#create connector
+conn = email.SMTP('smtp.gmail.com', 587) # 587 is the port number
+print(type(conn))
+
+#connect to the server
+conn.ehlo() # 250 is the OK response code
+#start tls encryption
+conn.starttls() #code 220 means everything's ok
+conn.ehlo() #reconnect to the server in encripted mode
+
+# login
+# conn.login('myemail@gmail.com', 'xxx')
+# https://stackoverflow.com/questions/16512592/login-credentials-not-working-with-gmail-smtp
+'''
+the feature is no longer working, need to enable weaker access in gmail
+'''
+
+conn.quit()
