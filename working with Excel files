@@ -1,0 +1,33 @@
+# working with Excel files
+import openpyxl as xl
+import os
+import datetime
+
+defaultFolder = os.path.join('C:\\Users', 'olgae', 'Python_studies_Olga')
+# print(defaultFolder)
+os.chdir(defaultFolder)
+
+# create a new workbook, it is CAPITAL W
+wb = xl.Workbook()
+
+# check for any sheets in it
+print(wb.sheetnames)
+
+# insert values into a couple of cells
+sheet = wb['Sheet']
+sheet['A1'] = 42
+sheet['A2'] = 'Hello'
+# sheet.cell(row = 2, column = 2) = 'OMG, it worked' # ok, it's not working
+
+# add a new sheet
+sheet2 = wb.create_sheet("OMG sheet")
+print(wb.sheetnames)
+sheet3 = wb.create_sheet(index = 0, title = 'Yet another sheet')
+print(wb.sheetnames)
+
+# rename a sheet
+sheet.title = 'Renamed sheet'
+print(wb.sheetnames)
+
+# save the file. If the file exists, it'll be replaced
+wb.save(str(datetime.date.today()) + '_practice.xlsx')
