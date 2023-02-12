@@ -1,0 +1,20 @@
+import pyautogui as pg
+# dir(pyautogui)
+
+#resolution in pixels
+width, height = pg.size()
+print("the width is " + str(width) + ' pixels')
+print("the height is " + str(height))
+
+# mouse position
+xpos, ypos = pg.position()
+print('x = ' + str(xpos))
+print('y = ' + str(ypos))
+
+# move the mouse to a fixed location in 3.5 seconds
+pg.moveTo(3800, 2100, duration = 3.5)
+# move the mouse relatively to the current spot in 3.5 seconds
+pg.moveRel(-1000, -500, duration = 1.5)
+
+# click on a location
+pg.click(3020, 418)
