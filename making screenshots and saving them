@@ -1,0 +1,15 @@
+# screenshots
+import pyautogui as pg
+import os
+import datetime
+
+defaultFolder = os.path.join('C:\\Users', 'olgae', 'Python_studies_Olga')
+print(defaultFolder)
+os.chdir(defaultFolder)
+
+
+fileName = str(datetime.date.today()) + '_screenshot.png'
+fileLocation = os.path.join(defaultFolder, fileName)
+print(fileLocation)
+
+pg.screenshot(fileLocation)
