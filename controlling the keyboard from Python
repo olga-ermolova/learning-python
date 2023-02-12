@@ -1,0 +1,16 @@
+# keyboard control
+import pyautogui as pg
+# dir(pg)rl
+# pg.position() # Point(x=69, y=266)
+
+# clicks on a selected spot and types a text
+# pg.click(69, 266); pg.typewrite("\nHello world!\n", interval = 0.1)
+
+#all keyboard options
+# pg.KEYBOARD_KEYS
+# pg.click(69, 266)
+# pg.typewrite(['a', 'b', 'c', 'left', 'backspace', 'enter', 'f1'], interval=0.1)
+# pg.typewrite('Hey world!', interval = 0.1)
+
+pg.hotkey('ctrl', 'o')
+pg.press('f1')
