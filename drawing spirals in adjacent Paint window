@@ -1,0 +1,14 @@
+import pyautogui as pg
+# Point(x=102, y=524)
+# Point(x=1783, y=1677)
+# pg.click() #to select the window with Paint
+dist = 500
+while dist > 0:
+    pg.dragRel(dist, 0, duration = 0.5) # right
+    dist += -25
+    pg.dragRel(0, dist, duration = 0.5) # down
+    dist += -25
+    pg.dragRel(-dist, 0, duration = 0.5) #left
+    dist += -25
+    pg.dragRel(0, -dist, duration = 0.5) # up
+    dist += -25
